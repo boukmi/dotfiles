@@ -1,0 +1,175 @@
+#################################################################
+# SUPER + ... KEYS
+#################################################################
+
+#Rofi
+super + space
+    sh .config/rofi/launchers/misc/launcher.sh
+
+#code
+super + d 
+    code
+
+#Browser
+super + b
+    firefox
+
+#Power Menu (Rofi)
+super + x
+    sh .config/rofi/powermenu/powermenu.sh	
+
+#Everdo
+super + e
+    /opt/Everdo/everdo %U
+
+#Telegram
+super + t
+    telegram-desktop
+
+#Mailspring
+super + m
+    mailspring
+
+#alacritty
+super + Return
+    alacritty
+
+#Lockscreen
+super + Escape
+    betterlockscreen -l
+
+#Spotify
+super + s
+    spotify
+
+#Obsidian
+super + n
+    obsidian
+
+#Calendar
+super + c
+    /usr/bin/google-chrome-stable --app=https://calendar.google.com
+
+#Zotero
+super + z
+    zotero
+
+#Bibisco
+super + w
+    /home/wingej0/.local/bin/bibisco-linux-x64-2.3.1-SE/bibisco
+
+#Pulse Audio Control
+super + v
+    pavucontrol
+
+#################################################################
+# SUPER + SHIFT KEYS
+#################################################################
+
+#File-Manager
+super + shift + Return
+	pcmanfm
+
+#reload sxhkd:
+super + shift + s
+	pkill -USR1 -x sxhkd
+
+#################################################################
+# CONTROL + ALT KEYS
+#################################################################
+
+#Connect VPN
+ctrl + alt + v
+     expressvpn connect
+
+#Disconnect VPN
+ctrl + alt + b
+     expressvpn disconnect
+
+#Xfce4-appfinder
+ctrl + alt + a
+    xfce4-appfinder
+
+#Mount Google Drives
+ctrl + alt + c
+    $HOME/.local/bin/cloud.sh
+
+#Configure Portable Display
+ctrl + alt + 1
+    $HOME/.local/bin/portable_monitor & nitrogen --restore
+
+#Office 2 Monitors
+ctrl + alt + 2
+    $HOME/.screenlayout/office.sh & nitrogen --restore
+
+# HiDPI HDMI (ie. boardroom)
+ctrl + alt + 3
+    $HOME/.screenlayout/hdmi4k.sh
+
+#Laptop Only
+ctrl + alt + 0
+    $HOME/.screenlayout/laptop.sh & nitrogen --restore
+
+#################################################################
+#     SCREENSHOTS
+#################################################################
+
+#Screenshot
+Print
+    flameshot full -c -p ~/Pictures/screenshots
+
+#################################################################
+#     FUNCTION KEYS
+#################################################################
+
+#Disable Touchpad
+F1
+    xinput disable 'ELAN040D:00 04F3:311D Touchpad'
+
+#Enable Touchpad
+shift + F1
+    xinput enable 'ELAN040D:00 04F3:311D Touchpad'
+
+#################################################################
+#     MULTIMEDIA KEYS
+#################################################################
+
+#Raises volume
+XF86AudioRaiseVolume
+    amixer set Master 5%+
+
+#Lowers volume
+XF86AudioLowerVolume
+    amixer set Master 5%-
+
+#Mute
+XF86AudioMute
+    amixer -D pulse set Master 1+ toggle
+
+#PLAY
+XF86AudioPlay
+    playerctl play-pause
+
+#Next
+XF86AudioNext
+    playerctl next
+
+#previous
+XF86AudioPrev
+    playerctl previous
+
+#Stop
+XF86AudioStop
+    playerctl stop
+
+#Brightness up
+XF86MonBrightnessUp
+    xbacklight -inc 5
+
+#Brightness down
+XF86MonBrightnessDown
+    xbacklight -dec 5
+
+#Google Apps Key Chords
+super + g; {f,p,d,s,x,c,t,b}
+    {/usr/bin/google-chrome-stable --app=https://drive.google.com,/usr/bin/google-chrome-stable --app=https://slides.google.com,/usr/bin/google-chrome-stable --app=https://docs.google.com,/usr/bin/google-chrome-stable --app=https://sheets.google.com,/usr/bin/google-chrome-stable --app=https://script.google.com,/usr/bin/google-chrome-stable --app=https://calendar.google.com,/opt/google/chrome/google-chrome --profile-directory=Default --app-id=mdpkiolbdkhdjpekfbkbmhigcaggjagi,/usr/bin/google-chrome-stable}
